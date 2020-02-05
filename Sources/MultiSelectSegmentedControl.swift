@@ -90,10 +90,16 @@ import UIKit
 
     // MARK: - Appearance
 
+		/// Width of the dividers between segments and the border around the view.
+    @IBInspectable open dynamic var spacing: CGFloat = 1 {
+        didSet {
+            stackView.spacing = spacing
+        }
+    }
+	
     /// Width of the dividers between segments and the border around the view.
     @IBInspectable open dynamic var borderWidth: CGFloat = 1 {
         didSet {
-            stackView.spacing = borderWidth
             borderView.layer.borderWidth = borderWidth
             for divider in dividers {
                 constrainDividerToControl(divider: divider)
