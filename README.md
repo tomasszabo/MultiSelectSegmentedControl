@@ -148,14 +148,14 @@ multiSelect.isVerticalSegmentContents = true
 ### CocoaPods:
 
 ```ruby
-pod 'MultiSelectSegmentedControl'
+pod 'MultiSelectSegmentedControl', :git => 'https://github.com/tomasszabo/MultiSelectSegmentedControl.git', :branch => 'master'
 ```
 
 ### Swift Package Manager:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/yonat/MultiSelectSegmentedControl", from: "2.3.0")
+    .package(url: "https://github.com/tomasszabo/MultiSelectSegmentedControl.git", branch: "master")
 ]
 ```
 
@@ -171,7 +171,7 @@ dependencies: [
 
 [https://github.com/yonat/MultiSelectSegmentedControl](https://github.com/yonat/MultiSelectSegmentedControl)
 
-[swift-image]:https://img.shields.io/badge/swift-5.0-orange.svg
+[swift-image]:https://img.shields.io/badge/swift-6.0-orange.svg
 [swift-url]: https://swift.org/
 [license-image]: https://img.shields.io/badge/License-MIT-blue.svg
 [license-url]: LICENSE.txt
