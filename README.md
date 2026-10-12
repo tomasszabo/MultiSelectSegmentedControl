@@ -11,6 +11,16 @@
 
 UISegmentedControl remake that supports selecting multiple segments, vertical stacking, combining text and images.
 
+## Swift 6 fork
+
+This fork uses Swift 6 language mode, Swift tools 6.2+, and an iOS 15 minimum.
+UIKit/SwiftUI operations and delegate callbacks are main-actor isolated.
+SweeterSwift remains an upstream dependency in its vendor-supported language mode.
+
+Install `https://github.com/tomasszabo/MultiSelectSegmentedControl.git` from `master`
+and select the `MultiSelectSegmentedControl` product. Validate the package using
+`xcodebuild -scheme MultiSelectSegmentedControl -destination 'platform=iOS Simulator,name=iPhone 17 Pro' CODE_SIGNING_ALLOWED=NO test`.
+
 ## Features
 
 - [x] Single or multiple selection.
@@ -138,14 +148,14 @@ multiSelect.isVerticalSegmentContents = true
 ### CocoaPods:
 
 ```ruby
-pod 'MultiSelectSegmentedControl'
+pod 'MultiSelectSegmentedControl', :git => 'https://github.com/tomasszabo/MultiSelectSegmentedControl.git', :branch => 'master'
 ```
 
 ### Swift Package Manager:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/yonat/MultiSelectSegmentedControl", from: "2.3.0")
+    .package(url: "https://github.com/tomasszabo/MultiSelectSegmentedControl.git", branch: "master")
 ]
 ```
 
@@ -161,7 +171,7 @@ dependencies: [
 
 [https://github.com/yonat/MultiSelectSegmentedControl](https://github.com/yonat/MultiSelectSegmentedControl)
 
-[swift-image]:https://img.shields.io/badge/swift-5.0-orange.svg
+[swift-image]:https://img.shields.io/badge/swift-6.0-orange.svg
 [swift-url]: https://swift.org/
 [license-image]: https://img.shields.io/badge/License-MIT-blue.svg
 [license-url]: LICENSE.txt

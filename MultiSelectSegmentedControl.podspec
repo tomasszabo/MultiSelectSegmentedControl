@@ -17,17 +17,19 @@ UISegmentedControl remake that supports selection multiple segments, vertical st
   s.author             = { "Yonat Sharon" => "yonat@ootips.org" }
   s.social_media_url   = "https://twitter.com/yonatsharon"
 
-  s.swift_version = '5.0'
-  s.swift_versions = ['5.0']
-  s.platform     = :ios, "9.0"
+  s.swift_version = '6.0'
+  s.swift_versions = ['6.0']
+  s.platform     = :ios, "15.0"
   s.requires_arc = true
   s.weak_framework = 'SwiftUI'
 
-  s.source       = { :git => "https://github.com/yonat/MultiSelectSegmentedControl.git", :tag => s.version }
+  s.source       = { :git => "https://github.com/tomasszabo/MultiSelectSegmentedControl.git", :branch => "master" }
   s.source_files  = "Sources/*.swift"
 
   s.dependency 'SweeterSwift'
 
-  s.pod_target_xcconfig = { 'LD_RUNPATH_SEARCH_PATHS' => '$(FRAMEWORK_SEARCH_PATHS)' } # fix Interface Builder render error
+  s.pod_target_xcconfig = { 'LD_RUNPATH_SEARCH_PATHS' => '$(FRAMEWORK_SEARCH_PATHS)',
+                           'SWIFT_DEFAULT_ACTOR_ISOLATION' => 'MainActor',
+                           'SWIFT_STRICT_CONCURRENCY' => 'complete' }
 
 end
