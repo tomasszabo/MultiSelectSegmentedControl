@@ -8,7 +8,7 @@
 import SweeterSwift
 import UIKit
 
-@objc public protocol MultiSelectSegmentedControlDelegate {
+@MainActor @objc public protocol MultiSelectSegmentedControlDelegate {
     func multiSelect(_ multiSelectSegmentedControl: MultiSelectSegmentedControl, didChange value: Bool, at index: Int)
 }
 
@@ -269,9 +269,9 @@ import UIKit
         segments.forEach { $0.tintColor = tintColor }
     }
 
-    open override func prepareForInterfaceBuilder() {
+    nonisolated open override func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
-        items = ["Lorem", "Ipsum", "Sit"]
+        MainActor.assumeIsolated { items = ["Lorem", "Ipsum", "Sit"] }
     }
 
     open override var intrinsicContentSize: CGSize { // to pacify Interface Builder frame calculations
